@@ -1,0 +1,18 @@
+name: Deploy
+
+# Placeholder required by the repository layout (HANDOFF section 12).
+# Building release images is spec 001 FR-028; deploying to a server waits for ADR-0002 (provider).
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  not-configured:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Explain
+        run: |
+          echo "Deployment is not configured yet: hosting provider pending (docs/adr/0002-hosting-provider-deferred.md)."
+          exit 1

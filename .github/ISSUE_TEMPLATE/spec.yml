@@ -1,0 +1,15 @@
+name: New spec
+description: Propose a spec (specs/NNN-name/spec.md)
+labels: [spec]
+body:
+  - type: input
+    id: number
+    attributes: { label: Spec number and name, placeholder: 003-file-ingestion }
+    validations: { required: true }
+  - type: textarea
+    id: why
+    attributes: { label: Why, description: Problem and who has it. }
+    validations: { required: true }
+  - type: input
+    id: release
+    attributes: { label: Release, placeholder: R1 }
