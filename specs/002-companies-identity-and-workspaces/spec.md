@@ -1,6 +1,6 @@
 # Spec 002 — Companies, identity and workspaces
 
-**Status:** Ready for approval (clarifications resolved 2026-11-08) · **Release:** R1, sprint 1–2 · **Owner:** tech lead
+**Status:** Approved 2026-11-08 by product owner · **Release:** R1, sprint 1–2 · **Owner:** tech lead
 **Depends on:** spec 001, ADR-0003 (built-in auth), ADR-0004 (workspace model)
 **Blocks:** every spec that stores customer data (003 onward)
 

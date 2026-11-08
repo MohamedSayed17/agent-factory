@@ -20,7 +20,7 @@ A spec PR and its implementation PRs are separate. A spec with `[NEEDS CLARIFICA
 |---|---|---|---|
 | — | constitution | — | **Approved** 1.0.0 (2026-11-08) |
 | 001 | platform-foundation | R1 | **Approved** 2026-11-08 — next: plan.md |
-| 002 | companies-identity-and-workspaces | R1 | Ready for approval (questions answered) |
+| 002 | companies-identity-and-workspaces | R1 | **Approved** 2026-11-08 — plan after 001 plan |
 | 041 | backup-and-restore (proposed, moved from R3) | R1 | Not written |
 
 Full R1 backlog: `docs/HANDOFF.md` §10.
