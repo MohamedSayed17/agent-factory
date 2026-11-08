@@ -41,8 +41,8 @@ jobs:
       DATABASE_URL: postgresql://agent:agent@localhost:5432/agent_test
       REDIS_URL: redis://localhost:6379/0
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
           cache: pip
@@ -60,12 +60,12 @@ jobs:
     name: Frontend (lint + tests + build)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Detect Angular app
         id: detect
         run: |
           if [ -f frontend/package.json ]; then echo "present=true" >> "$GITHUB_OUTPUT"; else echo "present=false" >> "$GITHUB_OUTPUT"; echo "No frontend/package.json yet - skipping."; fi
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         if: steps.detect.outputs.present == 'true'
         with:
           node-version: "22"
@@ -84,7 +84,7 @@ jobs:
     name: Docker Compose config
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Validate compose file
         run: |
           cp deploy/.env.example deploy/.env
@@ -93,10 +93,13 @@ jobs:
   secrets:
     name: Secret scan
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
-      - uses: gitleaks/gitleaks-action@v2
+      - uses: gitleaks/gitleaks-action@v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
