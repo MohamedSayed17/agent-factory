@@ -1,6 +1,6 @@
 # Spec 002 — Companies, identity and workspaces
 
-**Status:** Draft, awaiting owner approval · **Release:** R1, sprint 1–2 · **Owner:** tech lead
+**Status:** Ready for approval (clarifications resolved 2026-11-08) · **Release:** R1, sprint 1–2 · **Owner:** tech lead
 **Depends on:** spec 001, ADR-0003 (built-in auth), ADR-0004 (workspace model)
 **Blocks:** every spec that stores customer data (003 onward)
 
@@ -70,8 +70,8 @@ change takes effect on their next request, and it is audited.
 **US-7 — Reset my password (P1).** As a user who forgot my password, I reset it through a link
 sent to my email; all my other sessions are then signed out.
 
-**US-8 — Two-step sign-in (P2).** As a company owner, I protect my account with an authenticator
-app code in addition to my password.
+**US-8 — Two-step sign-in (P1).** As a company owner or admin, I must protect my account with an authenticator
+app code in addition to my password (mandatory for owners and admins, FR-007).
 
 **US-9 — Use the platform in my language (P2).** As a user, my chosen language (Arabic or English)
 is remembered and used for the interface, emails and error messages.
@@ -97,9 +97,10 @@ which removes access immediately and schedules its data for deletion after a 30-
 - **FR-005** Email verification is required before a user can create or join a company.
 - **FR-006** Sign-in, sign-up, password reset and invitation-accept endpoints are rate limited per
   account and per IP address.
-- **FR-007** Optional TOTP two-step sign-in (US-8) with one-time recovery codes.
-  [NEEDS CLARIFICATION: Make two-step sign-in **mandatory** for owners and admins in R1, or
-  optional for everyone? Recommendation: mandatory for owners/admins once the pilot starts.]
+- **FR-007** TOTP two-step sign-in (US-8) with one-time recovery codes. It is **mandatory for
+  company owners and admins**: a user who holds either role must set it up before they can use
+  the company, and cannot remove it while they hold the role. It is optional for other users.
+  *(Decided by owner 2026-11-08.)*
 - **FR-008** The identity design keeps a place for external sign-in (OIDC/SSO for the Enterprise
   plan, R4) without changing the user or membership model.
 
@@ -115,9 +116,8 @@ which removes access immediately and schedules its data for deletion after a 30-
   single-use. An invitation link reveals nothing about the company before the invitee signs in or
   signs up with the invited email.
 - **FR-014** Sign-up mode is configurable per deployment: *open* (anyone may create a company) or
-  *invite-only* (only platform operators create companies).
-  [NEEDS CLARIFICATION: Which mode for the hosted service during the pilot? Recommendation:
-  invite-only until the pilot ends.]
+  *invite-only* (only platform operators create companies). The hosted service runs
+  **invite-only during the pilot**. *(Decided by owner 2026-11-08.)*
 
 ### Database isolation (constitution Article III)
 - **FR-015** Every company-owned table has `company_id`; every workspace-owned table also has
@@ -137,10 +137,10 @@ which removes access immediately and schedules its data for deletion after a 30-
   is refused by the database, not only by the application.
 - **FR-020** Background jobs run with an explicit tenant context passed with the job; a job with no
   context cannot read tenant tables.
-- **FR-021** Platform operators do not get blanket data access. Support access to a company's data
-  requires an explicit, time-limited grant by that company's owner, and every action under it is
-  audited. [NEEDS CLARIFICATION: Is owner-granted support access needed in R1, or is "no operator
-  access to customer data" acceptable for the pilot? Recommendation: no access in R1.]
+- **FR-021** Platform operators have **no access to customer data in R1**. They can create,
+  suspend and delete companies and see platform audit events, but cannot read any company- or
+  workspace-owned rows. An owner-granted, time-limited support access may be specified in a later
+  release. *(Decided by owner 2026-11-08.)*
 
 ### Audit
 - **FR-022** Audit events are written for: sign-up, sign-in success and failure, sign-out,
@@ -202,4 +202,4 @@ which removes access immediately and schedules its data for deletion after a 30-
 - Arabic is the default language for new companies and users unless the browser asks for English.
 
 ## Open questions
-Three `[NEEDS CLARIFICATION]` items above (FR-007, FR-014, FR-021) must be answered before approval.
+None. FR-007, FR-014 and FR-021 were answered by the owner on 2026-11-08.

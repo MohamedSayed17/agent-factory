@@ -1,6 +1,6 @@
 # Spec 001 — Platform foundation
 
-**Status:** Draft, awaiting owner approval · **Release:** R1, sprint 1 · **Owner:** tech lead
+**Status:** Approved 2026-11-08 by product owner · **Release:** R1, sprint 1 · **Owner:** tech lead
 **Depends on:** constitution 1.0.0 · **Blocks:** every other spec
 
 ## Why

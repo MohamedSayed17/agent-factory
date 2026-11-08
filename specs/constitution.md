@@ -1,6 +1,6 @@
 # Constitution
 
-**Version:** 1.0.0-draft · **Status:** Draft, awaiting owner approval · **Last amended:** 2026-11-08
+**Version:** 1.0.0 · **Status:** Approved 2026-11-08 by product owner · **Last amended:** 2026-11-08
 
 These rules bind every spec, plan, task and pull request. A spec or plan that conflicts with this
 document is wrong until the constitution is amended. Amendments need a pull request that changes
