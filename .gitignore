@@ -218,3 +218,26 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# --- agent-factory additions ---
+# Secrets and local config: never commit
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+# Data: never commit dumps or customer files
+*.dump
+*.sql.gz
+*.bak
+data/
+uploads/
+# Node / Angular
+node_modules/
+frontend/dist/
+frontend/.angular/
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,11 @@
+name: Feature / spec request
+description: Propose a feature (becomes a spec in specs/)
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes: { label: Problem, description: Who needs this and why? }
+    validations: { required: true }
+  - type: textarea
+    id: proposal
+    attributes: { label: Proposal }

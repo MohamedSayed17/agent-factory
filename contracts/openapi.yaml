@@ -1,0 +1,25 @@
+openapi: 3.1.0
+info:
+  title: Agent Factory API
+  version: 0.0.1
+  license:
+    name: AGPL-3.0-only
+paths:
+  /health:
+    get:
+      summary: Liveness check
+      responses:
+        "200":
+          description: Process is up
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status: { type: string, example: ok }
+  /health/ready:
+    get:
+      summary: Readiness check (database reachable)
+      responses:
+        "200": { description: Ready }
+        "503": { description: Not ready }
