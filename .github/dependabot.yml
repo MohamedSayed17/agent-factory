@@ -3,12 +3,16 @@ updates:
   - package-ecosystem: pip
     directory: /backend
     schedule: { interval: weekly }
-  - package-ecosystem: npm
-    directory: /frontend
+  - package-ecosystem: docker
+    directory: /backend
+    schedule: { interval: weekly }
+  - package-ecosystem: docker-compose
+    directory: /deploy
     schedule: { interval: weekly }
   - package-ecosystem: github-actions
     directory: /
     schedule: { interval: weekly }
-  - package-ecosystem: docker
-    directory: /deploy
-    schedule: { interval: weekly }
+  # Add once the Angular app is scaffolded (needs frontend/package.json):
+  # - package-ecosystem: npm
+  #   directory: /frontend
+  #   schedule: { interval: weekly }
