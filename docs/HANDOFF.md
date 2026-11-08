@@ -26,6 +26,10 @@ actions (tickets, emails, hand-offs), and reports what people asked that it coul
 - Team: 10 people. Method: spec-driven development (specs and contracts are the source of truth).
 
 ## 3. Open decisions (ask the owner before building affected parts)
+> Update 2026-11-08: name → code name `agent-factory` until brand chosen (ADR-0001); hosting →
+> decide by week 8 (ADR-0002); auth → built-in (ADR-0003); workspace model (ADR-0004);
+> licence AGPL-3.0 (ADR-0005). Still open: 3, 4, 6, plus the open-core boundary.
+
 1. Product name and identity: A "Agent Factory" (graphite, signal orange, caution yellow, Space Grotesk,
    top bar), B "Masna3 / مصنع" (emerald, terracotta, sand, Cairo font, Arabic first, very round),
    C "Agentory" (violet, lime, Plus Jakarta Sans, left sidebar). Recommendation: B for Egypt.
