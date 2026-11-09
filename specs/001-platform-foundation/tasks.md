@@ -7,7 +7,7 @@ Each task is one pull request. `[P]` = can run in parallel with the other `[P]` 
 ## Wave 1 — start immediately
 - [ ] **T1** Backend tooling baseline (uv, mypy, markers) · FR-026 · after: —
 - [ ] **T13** [P] Angular workspace and bilingual shell · FR-021, FR-022, FR-024 · after: —
-- [ ] **T19** [P] Repository governance: READMEs, Project board, merge settings · FR-001, FR-029, FR-030 (FR-027 blocked, see plan *Open items*) · after: —
+- [ ] **T19** [P] Repository governance: READMEs, Project board, merge settings · FR-001, FR-027, FR-029, FR-030 · after: —
 
 ## Wave 2 — after T1
 - [ ] **T2** Validated settings and `.env.example` · FR-005, FR-006 · after: T1
@@ -48,7 +48,7 @@ Each task is one pull request. `[P]` = can run in parallel with the other `[P]` 
 | FR-009 | T9 | FR-024 | T13 |
 | FR-010 | T8, T17 | FR-025 | T16 |
 | FR-011 | T6 | FR-026 | T1, T3, T17 |
-| FR-012 | T6 | FR-027 | T19 (blocked) |
+| FR-012 | T6 | FR-027 | T19 |
 | FR-013 | T5 | FR-028 | T18 |
 | FR-014 | T7 | FR-029 | T19 |
 | FR-015 | T12, T14 | FR-030 | T19 |

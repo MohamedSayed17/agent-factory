@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Spec:** `specs/001-platform-foundation/spec.md` (approved 2026-11-08) · **Status:** Draft, awaiting tech-lead approval
+**Spec:** `specs/001-platform-foundation/spec.md` (approved 2026-11-08) · **Status:** Approved 2026-11-09 by owner · execution: subagent-driven
 **Task index:** `specs/001-platform-foundation/tasks.md`
 
 **Goal:** Give the team one runnable, tested skeleton (backend, database roles, tenant context, API
@@ -491,7 +491,7 @@ The one command: `docker compose -f deploy/docker-compose.yml --env-file deploy/
 
 - [ ] **Step 1 (FR-001):** Every top-level folder has a README; `.claude/` and `.github/` are described in the root README.
 - [ ] **Step 2 (FR-030):** Create project "agent-factory delivery" with `gh project create`; set the Status field options to Backlog, Spec in review, Ready, In progress, In review, Done (GraphQL `updateProjectV2Field`); link the repository; add issues for specs 001–002 and tasks T1–T20.
-- [ ] **Step 3 (FR-027):** Repository settings: squash merge only, delete branch on merge. **Blocked:** branch protection and rulesets are not available on private repositories on the GitHub Free plan (API answered "Upgrade to GitHub Pro or make this repository public"). Needs an owner decision (see *Open items*). Once unblocked: require PR, 1 approval from CODEOWNERS, status checks `backend, migrations, frontend, e2e, licences, compose, secrets`, no force push, include administrators.
+- [ ] **Step 3 (FR-027):** Repository settings: squash merge only, delete branch on merge. Branch protection (repository public per ADR-0006): require PR, 1 approval from CODEOWNERS, status checks `backend, migrations, frontend, e2e, licences, compose, secrets`, no force push, include administrators.
 - [ ] **Step 4 (FR-029):** Already satisfied on `main` (templates and PR template); verify only.
 - [ ] **Step 5:** Commit `docs: folder READMEs and governance (FR-001, FR-029, FR-030)`.
 
@@ -505,9 +505,6 @@ The one command: `docker compose -f deploy/docker-compose.yml --env-file deploy/
 - [ ] **Step 4:** Update spec 001 status to **Done** in `specs/README.md`; commit `docs: spec 001 verification`.
 
 ## Open items for the tech lead / owner
-1. **FR-027 branch protection is blocked** by the GitHub plan. Options: GitHub Pro for the owner
-   account (about USD 4/month), move the repo to a GitHub organisation on the Team plan (needed anyway
-   for 10 people's access control), or make the repository public (conflicts with ADR-0005's
-   "private until brand checks"). Recommendation: a GitHub organisation on the Team plan.
-2. **Worker health via CLI instead of HTTP** (Decision 12) needs tech-lead sign-off.
-3. **Two images instead of three** (Decision 11) needs tech-lead sign-off.
+1. ~~FR-027 branch protection blocked by the GitHub plan.~~ Resolved by ADR-0006 (repository public, 2026-11-09).
+2. Worker health via CLI instead of HTTP (Decision 12): accepted with the plan, 2026-11-09.
+3. Two images instead of three (Decision 11): accepted with the plan, 2026-11-09.
