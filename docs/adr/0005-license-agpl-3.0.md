@@ -11,4 +11,4 @@ service must publish their changes.
 - Plan gating in public code can be removed by anyone who self-hosts. The open-core boundary
   (which features stay open, which are paid-only or hosted-only) needs its own ADR before the R2
   billing spec.
-- The repository stays private until the brand, trademark and domain checks are done.
+- ~~The repository stays private until the brand, trademark and domain checks are done.~~ Amended by ADR-0006: public from 2026-11-09.
